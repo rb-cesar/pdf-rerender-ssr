@@ -1,0 +1,27 @@
+{
+  "scripts": {
+    "build:client": "esbuild src/index.tsx --bundle --outfile=dist/client/app.js --loader:.js=jsx",
+    "build:server": "esbuild src/server.ts --bundle --outfile=dist/server.js --platform=node",
+    "build": "yarn build:client && yarn build:server",
+    "start": "node ./dist/server.js",
+    "dev": "yarn build:client && nodemon src/server/server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "@react-pdf/renderer": "^3.4.4",
+    "esbuild": "^0.23.1",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.4.1",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  }
+}
